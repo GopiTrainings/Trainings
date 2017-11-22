@@ -1,0 +1,45 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.test'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+bootRepackage.enabled = false
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.apache.camel:camel-spring-boot-starter:2.20.0')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.kafka:spring-kafka')
+	runtime('org.springframework.boot:spring-boot-devtools')
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    compileOnly('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile 'com.intuit.karate:karate-junit4:0.6.1'
+	testCompile 'com.intuit.karate:karate-apache:0.6.1'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.company.Application'
+	}
+}
