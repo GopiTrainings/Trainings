@@ -16,6 +16,11 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+    @RequestMapping("/health")
+    public String health() {
+        log.info("Health EXECUTED");
+        return "I am alive: version: 0.0.1";
+    }
 
 
     @RequestMapping("/echo")
