@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
-    </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="demo_1_main" target="1.8" />
-      <module name="demo_1_test" target="1.8" />
+      <module name="Trainings_main" target="1.8" />
+      <module name="Trainings_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
